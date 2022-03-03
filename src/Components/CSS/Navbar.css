@@ -1,0 +1,76 @@
+.navbar{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+
+    align-items: center;
+    margin: auto;
+    padding: auto;
+    color: white;
+   overflow-x: hidden;
+   overflow-y: hidden;
+}
+.navbar h3{
+    padding-left: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+  font-size: 2rem;
+  font-weight: bold;
+
+  
+}
+.effect{
+    background: #ca12a2; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ca12a2,
+    #451192
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ca12a2,
+    #451192
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.navbar ul li{
+    list-style: none;
+    display: inline;
+    padding-left: 30px;
+    cursor: pointer;
+}
+.navbar ul li:hover{
+color: rgb(190, 190, 190);
+}
+.visited{
+    color: rgb(190, 190, 190);
+}
+.address-text{
+    margin-right: 5px;
+}
+.connect-btn{
+    width: 6.8rem;
+    height: 45px;
+  
+    background-color: rgb(0, 153, 255);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 12px;
+    font-weight: 550;
+    cursor: pointer;
+
+}
+.connect-btn:hover{
+    background-color: rgb(24, 119, 214);
+}
+.connect{
+    position: absolute;
+   right: 2rem;
+   display: flex;
+   flex-direction: row;
+
+}
