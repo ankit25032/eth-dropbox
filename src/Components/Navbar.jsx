@@ -1,16 +1,31 @@
-import React from "react";
+import { useEffect } from "react";
 import "./CSS/Navbar.css";
+import { Link } from "react-router-dom";
 import Avatar, { genConfig } from "react-nice-avatar";
 
 export default function Navbar({ requestacc, address }) {
+  useEffect(() => {
+    setTimeout(() => {
+      if (window.ethereum._state.accounts.length !== 0) {
+        requestacc();
+      }
+    }, 100);
+  }, []);
+  console.log(address);
   //   const avatar = faker.image.avatar();
   //   console.log(address);
   return (
     <div className="navbar">
-      <h3 className="effect">D-DOC</h3>
+      <Link to="/">
+        <h3 className="effect">D-DOC</h3>
+      </Link>
       <ul>
-        <li>Home</li>
-        <li>Files</li>
+        <Link to="/">
+          <li>Home</li>
+        </Link>
+        <Link to="/files">
+          <li>Files</li>
+        </Link>
       </ul>
 
       <div className="connect">
@@ -22,7 +37,13 @@ export default function Navbar({ requestacc, address }) {
             <Avatar style={{ width: "3rem", height: "3rem" }} />
           </>
         ) : (
-          <button onClick={requestacc} className="connect-btn">
+          <button
+            onClick={() => {
+              localStorage.setItem("isrequested", "true");
+              requestacc();
+            }}
+            className="connect-btn"
+          >
             Connect
           </button>
         )}

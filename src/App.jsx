@@ -1,9 +1,12 @@
 import "./App.css";
+import { Router, Route, Routes } from "react-router-dom";
 import { ethers } from "ethers";
 import DStorage from "./artifacts/contracts/Dstorage.sol/DStorage.json";
 
 import Navbar from "./Components/Navbar";
-import { useState } from "react";
+import Main from "./Components/Main";
+import { useEffect, useState } from "react";
+import Home from "./Components/Home";
 
 function App() {
   const dsadress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
@@ -32,9 +35,10 @@ function App() {
   return (
     <div className="App">
       <Navbar address={address} requestacc={requestAccount} />
-      login
-      <h1 className="text-3xl font-bold flex underline">Hello world!</h1>
-      <button onClick={fetchCount}>getcount</button>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/files" element={<Main />}></Route>
+      </Routes>
     </div>
   );
 }
